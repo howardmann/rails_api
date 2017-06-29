@@ -60,3 +60,21 @@ p "ASSOCIATIONS........"
 p "Stevens movies: #{steven.movies.pluck(:title)}"
 p "Ridleys movies: #{ridley.movies.pluck(:title)}"
 
+
+# CAT ..........................................
+Cat.destroy_all
+fluffy = Cat.create(
+  :name => 'fluffy',
+  :age => 12,
+  :color => 'purple'
+)
+evil = Cat.create(
+  :name => 'evil kitty',
+  :age => 65,
+  :color => 'flame'
+)
+
+# Cat tests
+p "Cat........"
+p "Cat count: #{Cat.all.length}"
+p "Cat titles: #{Cat.all.pluck(:name)}"
