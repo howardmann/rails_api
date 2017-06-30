@@ -16,6 +16,8 @@ class CatsController < ApplicationController
   
   private
     def cat_params
-      ActiveModelSerializers::Deserialization.jsonapi_parse(params)
+      # Here we simply use standard api response.
+      # We will serialize the POST payload on the Ember client side
+      params.require(:cat).permit(:name, :age, :color)
     end
 end
